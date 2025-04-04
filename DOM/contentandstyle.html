@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Content and Style</title>
+</head>
+<body>
+  <h1 id="header">Welcome to JavaScript!</h1>
+  <button id="changeButton">Change Header</button>
+
+  <script>
+    document.getElementById("changeButton").addEventListener("click", () => {
+      const header = document.getElementById("header");
+      // Change the text content
+      header.textContent = "JavaScript DOM Manipulation";
+      //using innerHTML to change the content
+      // header.innerHTML = "<strong>JavaScript DOM Manipulation</strong>";
+      // Change the style
+      header.style.color = "blue";
+      header.style.fontSize = "40px";
+    });
+  </script>
+</body>
+</html>

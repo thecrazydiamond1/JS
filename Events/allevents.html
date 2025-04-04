@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Handling Example</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin-bottom: 20px;
+    }
+    #inputField {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Button -->
+  <button id="button">Click Me!</button>
+
+  <!-- Input Field -->
+  <input type="text" id="inputField" placeholder="Type something...">
+
+  <!-- Form -->
+  <form id="myForm">
+    <input type="text" placeholder="Enter text" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Box -->
+  <div id="box">Hover over me!</div>
+
+  <script>
+    // Click Event
+    document.getElementById('button').addEventListener('click', () => {
+      alert('Button clicked!');
+    });
+
+    // Keyup Event
+    document.getElementById('inputField').addEventListener('keyup', (event) => {
+      console.log('Key pressed: ' + event.key);
+    });
+
+    // Submit Event
+    document.getElementById('myForm').addEventListener('submit', (event) => {
+      event.preventDefault();  // Prevent form submission to demonstrate event handling
+      console.log('Form submitted!');
+    });
+
+    // Mouseover Event
+    document.getElementById('box').addEventListener('mouseover', () => {
+      console.log('Mouse is over the box!');
+    });
+
+    // Mouseout Event
+    document.getElementById('box').addEventListener('mouseout', () => {
+      console.log('Mouse is out of the box!');
+    });
+
+    // Focus Event
+    document.getElementById('inputField').addEventListener('focus', () => {
+      console.log('Input field is focused');
+    });
+
+    // Blur Event
+    document.getElementById('inputField').addEventListener('blur', () => {
+      console.log('Input field lost focus');
+    });
+  </script>
+
+</body>
+</html>

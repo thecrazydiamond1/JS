@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementById Example</title>
+</head>
+<body>
+  <p id="greeting">Hello, world!</p>
+  <button onclick="changeContent()">Change Content</button>
+
+  <script>
+    function changeContent() {
+      const element = document.getElementById("greeting");
+      element.textContent = "Hello, JavaScript!";
+      element.style.color = "blue";
+    }
+  </script>
+</body>
+</html>

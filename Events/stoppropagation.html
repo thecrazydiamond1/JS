@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stop Propagation Example</title>
+</head>
+<body>
+  <div id="parent">
+    <button id="child">Click Me!</button>
+  </div>
+
+  <script>
+    document.getElementById('parent').addEventListener('click', () => {
+      console.log('Parent clicked!');
+    });
+
+    document.getElementById('child').addEventListener('click', (event) => {
+      event.stopPropagation(); // Stop event from propagating to parent.  If this line is removed, the parent event will also be triggered.
+      console.log('Child clicked!');
+    });
+  </script>
+</body>
+</html>
+<!-- When the child button is clicked, the click event is logged with "Child clicked!". -->
+<!-- However, because stopPropagation() is called, the event does not propagate to the parent element, and "Parent clicked!" is not logged. -->

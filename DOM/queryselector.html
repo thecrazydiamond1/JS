@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementById vs querySelector</title>
+</head>
+<body>
+  <h1 id="header">Welcome to JavaScript</h1>
+  <p class="intro">This is an introduction.</p>
+  <p class="intro">This is another introduction.</p>
+  <button id="changeButton">Change Content</button>
+
+  <script>
+    // Using getElementById() to select an element by ID
+    const headerById = document.getElementById("header");
+    console.log(headerById);  // Logs the <h1> element with id="header"
+
+    // Using querySelector() to select an element by ID
+    const headerByQuery = document.querySelector("#header");
+    console.log(headerByQuery);  // Logs the <h1> element with id="header"
+
+    // Using getElementById() to select an element by class will not work
+    // const introById = document.getElementById("intro"); // This would be null since there's no element with id="intro"
+    
+    // Using querySelector() to select the first element with a class of "intro"
+    const introByQuery = document.querySelector(".intro");
+    console.log(introByQuery);  // Logs the first <p> element with class="intro"
+
+    // Using querySelector() to select the second element with the class "intro" (this won't work with getElementById())
+    const secondIntroByQuery = document.querySelector(".intro:nth-of-type(2)");
+    console.log(secondIntroByQuery);  // Logs the second <p> element with class="intro"
+
+    // Selecting by tag name using querySelector
+    const firstParagraph = document.querySelector("p");
+    console.log(firstParagraph);  // Logs the first <p> element
+
+    // Selecting all paragraphs (this would require querySelectorAll())
+    const allParagraphs = document.querySelectorAll("p");
+    console.log(allParagraphs);  // Logs a NodeList of all <p> elements
+  </script>
+</body>
+</html>
